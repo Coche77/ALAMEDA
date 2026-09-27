@@ -900,7 +900,7 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">1</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">1</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="0" min="0" max="1" data-actualizado="1" data-key="D-000-ALA-S10-000-e-Y__20"><span class="stat__label">Instaladas</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="1" min="0" max="1" data-actualizado="1" data-key="D-000-ALA-S10-000-e-Y__20"><span class="stat__label">Instaladas</span></div>
             <div class="stat"><span class="stat__num" data-role="pendientes">1</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
@@ -920,7 +920,7 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">1</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">1</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="0" min="0" max="1" data-actualizado="1" data-key="D-000-ALA-S10-000-f-Y__21"><span class="stat__label">Instaladas</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="1" min="0" max="1" data-actualizado="1" data-key="D-000-ALA-S10-000-f-Y__21"><span class="stat__label">Instaladas</span></div>
             <div class="stat"><span class="stat__num" data-role="pendientes">1</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
@@ -940,7 +940,7 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">2</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">2</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="0" min="0" max="2" data-actualizado="2" data-key="E-000-ALA-S11-000-0-0__22"><span class="stat__label">Instaladas</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="2" min="0" max="2" data-actualizado="2" data-key="E-000-ALA-S11-000-0-0__22"><span class="stat__label">Instaladas</span></div>
             <div class="stat"><span class="stat__num" data-role="pendientes">2</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
@@ -1563,6 +1563,23 @@
     const pill = card.querySelector('.pill');
     if(pill){ pill.className = 'pill pill--' + status; pill.textContent = label; }
 
+    const obs = card.querySelector('.obs');
+    if(obs){
+      if(obs.dataset.nota === undefined){
+        const m = obs.textContent.match(/Nota tabla:.*$/);
+        obs.dataset.nota = m ? m[0] : '';
+      }
+      const nota = obs.dataset.nota ? ' ' + obs.dataset.nota : '';
+      const faltan = actualizado - val;
+      const pct = actualizado ? Math.round(val / actualizado * 100) : 0;
+      let txt;
+      if(actualizado === 0) txt = 'No aplica en esta estación.';
+      else if(val === 0) txt = 'Pendiente de verificar en plano/campo.';
+      else if(faltan === 0) txt = `Instaladas: ${val} de ${actualizado} (100%). Completo.`;
+      else txt = `Instaladas: ${val} de ${actualizado} (${pct}%). Falta${faltan>1?'n':''} ${faltan} por instalar.`;
+      obs.textContent = txt + nota;
+    }
+
     if(save){
       const key = input.dataset.key;
       try{ localStorage.setItem(INSTALL_PREFIX + key, String(val)); }catch(err){}
@@ -1600,6 +1617,7 @@
     input.addEventListener('input', () => updateCardFromInput(input, true));
     input.addEventListener('blur', () => updateCardFromInput(input, true));
     input.addEventListener('keydown', (e) => { if(e.key === 'Enter') input.blur(); });
+    updateCardFromInput(input, false);
   });
   recalcSummaryFromCards();
 </script>
