@@ -407,6 +407,7 @@
     .masthead__stamp{border-left:none; padding-left:0; text-align:left;}
     .summary{grid-template-columns:repeat(2,1fr); margin-top:0;}
   }
+  .obs{display:none !important;}
 </style>
 </head>
 <body>
@@ -1585,7 +1586,7 @@
       else if(faltan === 0) txt = `Instaladas: ${val} de ${actualizado} (100%). Completo.`;
       else txt = `Instaladas: ${val} de ${actualizado} (${pct}%). Falta${faltan>1?'n':''} ${faltan} por instalar.`;
       obs.textContent = txt + nota;
-      obs.style.display = (faltan === 0 && actualizado > 0) ? 'none' : '';
+      obs.style.display = 'none';
     }
 
     if(save){
