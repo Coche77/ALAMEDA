@@ -1019,8 +1019,8 @@
           <p class="desc">Mapa de Red</p>
           <div class="stats">
             <div class="stat"><span class="stat__num">3</span><span class="stat__label">Contrato</span></div>
-            <div class="stat"><span class="stat__num">2</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="0" min="0" max="2" data-actualizado="2" data-key="G-000-RED-S13-000-0-0__26"><span class="stat__label">Instaladas</span></div>
+            <div class="stat"><span class="stat__num">3</span><span class="stat__label">Actualizado</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="3" min="0" max="3" data-actualizado="3" data-key="G-000-RED-S13-000-0-0__26"><span class="stat__label">Instaladas</span></div>
             <div class="stat"><span class="stat__num" data-role="pendientes">2</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
@@ -1578,6 +1578,7 @@
       else if(faltan === 0) txt = `Instaladas: ${val} de ${actualizado} (100%). Completo.`;
       else txt = `Instaladas: ${val} de ${actualizado} (${pct}%). Falta${faltan>1?'n':''} ${faltan} por instalar.`;
       obs.textContent = txt + nota;
+      obs.style.display = (faltan === 0 && actualizado > 0) ? 'none' : '';
     }
 
     if(save){
