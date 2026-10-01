@@ -1280,7 +1280,7 @@
   // named "<codigo>__1.jpg", "<codigo>__2.jpg", etc. (up to MAX_FOLDER_PHOTOS).
   // This lets photos be delivered as normal files (e.g. via GitHub) instead of
   // depending on browser storage, which has a small size limit.
-  const MAX_FOLDER_PHOTOS = 10;
+  const MAX_FOLDER_PHOTOS = 20;
   function probeFolderPhotos(codigo){
     const base = codigo.split('__')[0]; // strip the "__N" card-uniqueness suffix, keep just the real código
     const tries = [];
