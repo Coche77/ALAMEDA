@@ -1912,7 +1912,7 @@
   const MAX_FOLDER_PHOTOS = 20;
   // Lista de fotos que ya existen en fotos/ (se genera al armar el reporte).
   const FOTOS_CARPETA = {"B-000-RED-S05-102-c-0": 1, "A-003-RED-S07-003-0-0": 5, "B-403-RED-S05-000-a-0": 2, "B-000-RED-S05-000-a-0": 2, "MINUTA-ID06": 1, "A-300-RED-S03-300-0-0": 11, "MINUTA-ID19": 6, "A-000-FUG-S02-000-0-0": 6, "B-000-RED-S05-402-d-0": 1, "A-000-RED-S03-202-0-0": 3, "EXT2.FAB.MOD-NORTE": 1, "MINUTA-ID16": 3, "PRIMEROS AUXILIOS": 1, "B-000-RED-S05-102-b-0": 1, "A-303-RED-S03-000-0-0": 5, "B-000-RED-S05-000-d-0": 5, "A-600-RED-S09-600-0-0": 2, "MINUTA-ID11": 1, "MINUTA-ID02": 2, "B-003-RED-S05-000-b-0": 1, "B-000-RED-S05-002-d-0": 1, "MINUTA-ID12": 1, "B-200-RED-S05-400-b-0": 4, "A-001-RED-S07-001-0-0": 3, "B-100-RED-S05-500-b-0": 2, "G-000-RED-S13-000-0-0": 2, "EXT1-B-000-RED-S05-402-d-0": 1, "MINUTA-ID23": 6, "MINUTA-ID13": 2, "EXT3.FAB.MOD-BANDERA": 2, "MINUTA-ID07": 2, "A-000-FU3-S02-000-0-X": 2, "A-000-RED-S03-000-0-0": 3, "E-000-FUG-S11-000-0-0": 3, "B-000-RED-S05-000-c-0": 7, "A-000-RED-S03-302-0-0": 6, "A-000-RED-S07-000-0-0": 2, "E-000-FUG-S15-000-d-0": 4, "A-000-RED-S25-000-0-0": 2, "USO DE CHALECO": 4, "B-000-RED-S05-202-a-0": 2, "MINUTA-ID17": 1, "B-403-RED-S05-000-d-0": 2, "MAMPARA EN TOTEM DE ANDEN": 3, "E-000-FUG-S15-000-c-0": 1, "F-000-RED-S26-000-0-0": 1, "MINUTA-ID10": 1, "MINUTA-ID09": 1, "A-021-RED-S08-021-0-0": 2, "MINUTA-ID20": 3, "A-000-RED-S07-501-0-0": 1, "B-503-RED-S05-000-c-0": 1, "A-002-RED-S07-002-0-0": 1, "E-000-FUG-S15-000-b-0": 1, "D-000-FUG-S10-300-f-X": 3, "B-100-RED-S05-500-c-0": 2, "A-001-RED-S06-001-0-0": 1, "A-003-RED-S03-002-c-0": 2, "B-200-RED-S05-400-c-0": 1, "K-000-FUG-S15-000-a-0": 3, "B-000-RED-S05-000-b-0": 1, "PROHIBIDO EL PASO": 4, "MINUTA-ID14": 1, "A-001-RED-S03-001-0-0": 2, "OFICINA SINDICAL": 1, "B-003-RED-S05-002-bc-0": 1, "F-000-RED-S16-000-0-0": 2, "M-203-RED-S05-002-c-Z": 1, "EXT1-B-403-RED-S05-000-a-0": 1, "A-000-RED-S03-201-0-0": 1, "MINUTA-ID05": 1, "EXT2.FAB.MOD-SUR": 1, "B-000-RED-S05-002-b-0": 1, "MINUTA-ID24": 1};
-  const FOTOS_VER = '202610080704';
+  const FOTOS_VER = '202610080735';
   function probeOne(url){
     return new Promise(resolve => { const img = new Image(); img.onload = () => resolve(true); img.onerror = () => resolve(false); img.src = url; });
   }
@@ -1924,7 +1924,7 @@
     for(let i = 1; i <= n; i++) out.push(`fotos/${enc}__${i}.jpg?v=${FOTOS_VER}`);
     // fotos agregadas despues de armar el reporte: se buscan en orden hasta la primera que no exista
     for(let i = n + 1; i <= MAX_FOLDER_PHOTOS; i++){
-      const url = `fotos/${enc}__${i}.jpg`;
+      const url = `fotos/${enc}__${i}.jpg?nc=${Date.now()}`; // sin cache: una foto borrada no vuelve a salir
       if(await probeOne(url)) out.push(url); else break;
     }
     return out;
