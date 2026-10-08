@@ -428,6 +428,21 @@
   .card__sign{background:none !important;padding:0 !important;}
   .card__sign:has(.sign-icon--wide){width:100%;}
   .sign-icon--wide{width:100%;max-height:none;}
+
+  .resumen{margin-top:48px;background:var(--card);border:1px solid var(--paper-line);border-radius:var(--radius);padding:22px 24px;break-inside:avoid;}
+  .resumen h2{font-family:'Space Grotesk',sans-serif;font-size:20px;margin:0 0 4px;}
+  .resumen p.sub{margin:0 0 16px;color:var(--ink-soft);font-size:13px;}
+  .resumen table{width:100%;max-width:520px;border-collapse:collapse;font-size:13.5px;}
+  .resumen th{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);text-align:right;padding:8px 10px;border-bottom:2px solid var(--paper-line);}
+  .resumen th:first-child,.resumen td:first-child{text-align:left;}
+  .resumen td{padding:9px 10px;border-bottom:1px solid var(--paper-line);text-align:right;font-variant-numeric:tabular-nums;}
+  .resumen tr.grp td{background:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-deep);font-weight:600;text-align:left;}
+  .resumen tr.sub td{font-weight:700;border-bottom:2px solid var(--paper-line);}
+  .resumen tr.tot td{font-weight:800;font-size:15px;background:var(--teal-pale);color:var(--teal-deep);border-bottom:none;}
+  .resumen td.inst{color:var(--teal-deep);font-weight:700;}
+  .resumen td.pend{color:var(--red);}
+  .resumen .nota{margin:14px 0 0;font-size:12px;color:var(--ink-soft);line-height:1.5;}
+  @media print{.resumen{box-shadow:none;page-break-inside:avoid;}}
 </style>
 </head>
 <body>
@@ -507,7 +522,7 @@
   <p class="section-label">23 partidas de señalética</p>
 
   <section class="grid" id="grid">
-      <article class="card" data-status="pendiente" data-search="a-000-arm-s02-000-0-0 arena monterrey señ.1.01 ">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="a-000-arm-s02-000-0-0 arena monterrey señ.1.01 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.01</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -526,7 +541,7 @@
         <div class="card__photo is-empty" data-photo-key="A-000-ARM-S02-000-0-0__ARM0"></div>
         <p class="obs">Nota tabla: No instalado. Minuta-7 ID 2 y 9: deductiva de 4 en accesos y 4 en andén; se reubican.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="a-000-red-s03-000-0-0 venta y recarga señ.1.01 vestíbulo (2)">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="a-000-red-s03-000-0-0 venta y recarga señ.1.01 vestíbulo (2)">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.01</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -545,7 +560,7 @@
         <div class="card__photo is-empty" data-photo-key="A-000-RED-S03-000-0-0__ARM1"></div>
         <p class="obs">Instalado en: Vestíbulo (2). Nota tabla: Se usan 2 pzas, bastidor de partida FAB.MOD.1.07. Vinil y bastidor pendiente.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="a-000-red-s07-000-0-0 salida / exit señ.1.01 andén norte (4), andén sur (4)">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="a-000-red-s07-000-0-0 salida / exit señ.1.01 andén norte (4), andén sur (4)">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.01</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -564,7 +579,7 @@
         <div class="card__photo is-empty" data-photo-key="A-000-RED-S07-000-0-0__ARM2"></div>
         <p class="obs">Instalado en: Andén norte (4), Andén sur (4). </p>
       </article>
-      <article class="card" data-status="pendiente" data-search="a-001-red-s06-001-0-0 entrada / entrance (flechas arriba) señ.1.01 ">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="a-001-red-s06-001-0-0 entrada / entrance (flechas arriba) señ.1.01 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.01</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -583,7 +598,7 @@
         <div class="card__photo is-empty" data-photo-key="A-001-RED-S06-001-0-0__ARM3"></div>
         <p class="obs">Nota tabla: No instalados.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="a-001-red-s07-001-0-0 salida / exit (flechas arriba) señ.1.01 vestíbulo oriente (2), vestíbulo poniente (2)">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="a-001-red-s07-001-0-0 salida / exit (flechas arriba) señ.1.01 vestíbulo oriente (2), vestíbulo poniente (2)">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.01</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -602,7 +617,7 @@
         <div class="card__photo is-empty" data-photo-key="A-001-RED-S07-001-0-0__ARM4"></div>
         <p class="obs">Instalado en: Vestíbulo Oriente (2), Vestíbulo Poniente (2). </p>
       </article>
-      <article class="card" data-status="pendiente" data-search="a-000-red-s25-000-0-0 oficina de estación señ.1.01 vestíbulo poniente (1)">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="a-000-red-s25-000-0-0 oficina de estación señ.1.01 vestíbulo poniente (1)">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.01</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -621,7 +636,7 @@
         <div class="card__photo is-empty" data-photo-key="A-000-RED-S25-000-0-0__ARM5"></div>
         <p class="obs">Instalado en: Vestíbulo Poniente (1). </p>
       </article>
-      <article class="card" data-status="pendiente" data-search="a-000-red-s26-000-0-0 biciestacionamiento señ.1.01 ">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="a-000-red-s26-000-0-0 biciestacionamiento señ.1.01 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.01</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -640,7 +655,7 @@
         <div class="card__photo is-empty" data-photo-key="A-000-RED-S26-000-0-0__ARM6"></div>
         <p class="obs">Nota tabla: No instalado.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="b-000-red-s05-000-b-0 dirección exposición (línea 1) señ.1.02 andén (1)">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="b-000-red-s05-000-b-0 dirección exposición (línea 1) señ.1.02 andén (1)">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.02</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -659,7 +674,7 @@
         <div class="card__photo is-empty" data-photo-key="B-000-RED-S05-000-b-0__ARM7"></div>
         <p class="obs">Instalado en: Andén (1). Nota tabla: Medida 2.40 × 0.30 m.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="b-000-red-s05-000-c-0 dirección talleres (línea 1) señ.1.02 andén (1)">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="b-000-red-s05-000-c-0 dirección talleres (línea 1) señ.1.02 andén (1)">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.02</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -678,7 +693,7 @@
         <div class="card__photo is-empty" data-photo-key="B-000-RED-S05-000-c-0__ARM8"></div>
         <p class="obs">Instalado en: Andén (1). Nota tabla: Medida 2.40 × 0.30 m.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="b-000-red-s05-102-b-0 dirección exposición (flecha der, escalera) señ.1.02 ">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="b-000-red-s05-102-b-0 dirección exposición (flecha der, escalera) señ.1.02 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.02</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -697,7 +712,7 @@
         <div class="card__photo is-empty" data-photo-key="B-000-RED-S05-102-b-0__ARM9"></div>
         <p class="obs">Nota tabla: No instalado.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="b-000-red-s05-102-c-0 dirección talleres (flecha der, escalera) señ.1.02 ">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="b-000-red-s05-102-c-0 dirección talleres (flecha der, escalera) señ.1.02 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.02</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -716,7 +731,7 @@
         <div class="card__photo is-empty" data-photo-key="B-000-RED-S05-102-c-0__ARM10"></div>
         <p class="obs">Nota tabla: No instalado.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="b-503-red-s05-000-b-0 dirección exposición (flecha izq, escalera) señ.1.02 ">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="b-503-red-s05-000-b-0 dirección exposición (flecha izq, escalera) señ.1.02 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.02</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -735,7 +750,7 @@
         <div class="card__photo is-empty" data-photo-key="B-503-RED-S05-000-b-0__ARM11"></div>
         <p class="obs">Nota tabla: No instalado.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="b-503-red-s05-000-c-0 dirección talleres (flecha izq, escalera) señ.1.02 ">
+      <article class="card" data-medida="2.40x0.30" data-comp="vinil" data-bastidor-inst="0" data-status="pendiente" data-search="b-503-red-s05-000-c-0 dirección talleres (flecha izq, escalera) señ.1.02 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.02</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -773,7 +788,7 @@
         <div class="card__photo is-empty" data-photo-key="D-000-ARM-S10-000-f-X__ARM13"></div>
         <p class="obs">Nota tabla: No instalado.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="e-000-arm-s11-000-0-0 mapa de entorno señ.1.05 ">
+      <article class="card" data-medida="0.40x0.75" data-comp="none" data-bastidor-inst="1" data-status="pendiente" data-search="e-000-arm-s11-000-0-0 mapa de entorno señ.1.05 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.05</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -792,7 +807,7 @@
         <div class="card__photo is-empty" data-photo-key="E-000-ARM-S11-000-0-0__ARM14"></div>
         <p class="obs">Nota tabla: Vestíbulo (1): solo bastidor, falta acabado final.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="e-000-arm-s15-000-c-0 diagrama de ruta — dirección talleres señ.1.05 ">
+      <article class="card" data-medida="0.40x0.75" data-comp="none" data-bastidor-inst="2" data-status="pendiente" data-search="e-000-arm-s15-000-c-0 diagrama de ruta — dirección talleres señ.1.05 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.05</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -811,7 +826,7 @@
         <div class="card__photo is-empty" data-photo-key="E-000-ARM-S15-000-c-0__ARM15"></div>
         <p class="obs">Nota tabla: Vestíbulo (2): solo bastidor, falta acabado final.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="f-000-red-s26-000-0-0 reglamento bicicletas y scooter señ.1.06.2 ">
+      <article class="card" data-medida="0.60x0.80" data-comp="none" data-bastidor-inst="0" data-status="pendiente" data-search="f-000-red-s26-000-0-0 reglamento bicicletas y scooter señ.1.06.2 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.06.2</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -830,7 +845,7 @@
         <div class="card__photo is-empty" data-photo-key="F-000-RED-S26-000-0-0__ARM16"></div>
         <p class="obs">Nota tabla: No instalado.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="g-000-red-s13-000-0-0 mapa de red señ.1.07 ">
+      <article class="card" data-medida="1.18x0.78" data-comp="none" data-bastidor-inst="0" data-status="pendiente" data-search="g-000-red-s13-000-0-0 mapa de red señ.1.07 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.07</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -849,7 +864,7 @@
         <div class="card__photo is-empty" data-photo-key="G-000-RED-S13-000-0-0__ARM17"></div>
         <p class="obs">Nota tabla: No instalado. Diseño pendiente por compartir.</p>
       </article>
-      <article class="card" data-status="pendiente" data-search="k-000-arm-s15-000-b-0 diagrama de ruta — dirección exposición señ.1.08 ">
+      <article class="card" data-medida="0.40x0.75" data-comp="none" data-bastidor-inst="1" data-status="pendiente" data-search="k-000-arm-s15-000-b-0 diagrama de ruta — dirección exposición señ.1.08 ">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.08</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -970,6 +985,40 @@
       </article>
   </section>
 
+
+  <section class="resumen" id="resumenMedidas">
+    <h2>Resumen de elementos instalados</h2>
+    <p class="sub">Bastidores, viniles, tótems y señales de andén instalados en la estación, para restar del presupuesto original.</p>
+    <table><thead><tr><th>Concepto</th><th>Cantidad</th></tr></thead><tbody>
+      <tr class="grp"><td colspan="2">Bastidores</td></tr>
+      <tr data-k="bastidor" data-m="2.40x0.30"><td>Bastidor 2.40 × 0.30 m</td><td class="act">2</td></tr>
+      <tr data-k="bastidor" data-m="1.80x0.30"><td>Bastidor 1.80 × 0.30 m</td><td class="act">0</td></tr>
+      <tr data-k="bastidor" data-m="1.18x0.78"><td>Bastidor 1.18 × 0.78 m</td><td class="act">1</td></tr>
+      <tr data-k="bastidor" data-m="0.60x0.80"><td>Bastidor 60 × 80 cm</td><td class="act">1</td></tr>
+      <tr data-k="bastidor" data-m="0.40x0.75"><td>Bastidor 40 × 75 cm</td><td class="act">5</td></tr>
+      <tr data-k="bastidor" data-m="6.30x0.75"><td>Bastidor 6.30 × 0.75 m</td><td class="act">2</td></tr>
+      <tr class="sub"><td>Total bastidores</td><td>11</td></tr>
+      <tr class="grp"><td colspan="2">Paletas</td></tr>
+      <tr data-k="paleta" data-m="1.18x0.78"><td>Paleta 1.18 × 0.78 m</td><td class="act">0</td></tr>
+      <tr data-k="paleta" data-m="0.60x0.80"><td>Paleta 60 × 80 cm</td><td class="act">0</td></tr>
+      <tr data-k="paleta" data-m="0.40x0.75"><td>Paleta 40 × 75 cm</td><td class="act">0</td></tr>
+      <tr class="sub"><td>Total paletas</td><td>0</td></tr>
+      <tr class="grp"><td colspan="2">Viniles</td></tr>
+      <tr data-k="vinil" data-m="2.40x0.30"><td>Vinil 2.40 × 0.30 m</td><td class="act">36</td></tr>
+      <tr data-k="vinil" data-m="1.80x0.30"><td>Vinil 1.80 × 0.30 m</td><td class="act">0</td></tr>
+      <tr class="sub"><td>Total viniles</td><td>36</td></tr>
+      <tr class="grp"><td colspan="2">Tótems</td></tr>
+      <tr data-k="totem" data-m="0.45x2.80"><td>Tótem "D" 0.45 × 2.80 m</td><td class="act">4</td></tr>
+      <tr class="sub"><td>Total tótems</td><td>4</td></tr>
+      <tr class="grp"><td colspan="2">Señales de andén</td></tr>
+      <tr data-k="anden" data-m="mampara"><td> Mampara rosa en tótem de andén</td><td class="act">2</td></tr>
+      <tr data-k="anden" data-m="peligro"><td> Señal de peligro (prohibido el paso)</td><td class="act">4</td></tr>
+      <tr data-k="anden" data-m="chaleco"><td> Señal de uso de chaleco</td><td class="act">4</td></tr>
+      <tr class="sub"><td>Total señales de andén</td><td>10</td></tr>
+      <tr class="tot"><td>Total de elementos instalados</td><td>61</td></tr>
+    </tbody></table>
+    <p class="nota">Viniles y bastidores de 2.40 × 0.30 m y 6.30 × 0.75 m: cantidades confirmadas en obra. Bastidores de 40 × 75 cm, 60 × 80 cm y 1.18 × 0.78 m, tótems "D" y señales de andén: cantidades confirmadas en obra.</p>
+  </section>
   <p class="empty-state" id="emptyState">Sin resultados para este filtro/búsqueda.</p>
 
   <footer>
@@ -1038,7 +1087,7 @@
   const MAX_FOLDER_PHOTOS = 20;
   // Lista de fotos que ya existen en fotos/ (se genera al armar el reporte).
   const FOTOS_CARPETA = {};
-  const FOTOS_VER = '202610081322';
+  const FOTOS_VER = '202610081501';
   function probeOne(url){
     return new Promise(resolve => { const img = new Image(); img.onload = () => resolve(true); img.onerror = () => resolve(false); img.src = url; });
   }
