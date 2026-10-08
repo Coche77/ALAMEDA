@@ -408,6 +408,23 @@
     .summary{grid-template-columns:repeat(2,1fr); margin-top:0;}
   }
   .obs{display:none !important;}
+
+  .resumen{margin-top:48px;background:var(--card);border:1px solid var(--paper-line);border-radius:var(--radius);padding:22px 24px;break-inside:avoid;}
+  .resumen h2{font-family:'Space Grotesk',sans-serif;font-size:20px;margin:0 0 4px;}
+  .resumen p.sub{margin:0 0 16px;color:var(--ink-soft);font-size:13px;}
+  .resumen table{width:100%;max-width:520px;border-collapse:collapse;font-size:13.5px;}
+  .resumen th{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);text-align:right;padding:8px 10px;border-bottom:2px solid var(--paper-line);}
+  .resumen th:first-child,.resumen td:first-child{text-align:left;}
+  .resumen td{padding:9px 10px;border-bottom:1px solid var(--paper-line);text-align:right;font-variant-numeric:tabular-nums;}
+  .resumen tr.grp td{background:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-deep);font-weight:600;text-align:left;}
+  .resumen tr.sub td{font-weight:700;border-bottom:2px solid var(--paper-line);}
+  .resumen tr.tot td{font-weight:800;font-size:15px;background:var(--teal-pale);color:var(--teal-deep);border-bottom:none;}
+  .resumen td.inst{color:var(--teal-deep);font-weight:700;}
+  .resumen td.pend{color:var(--red);}
+  .resumen .nota{margin:14px 0 0;font-size:12px;color:var(--ink-soft);line-height:1.5;}
+  @media print{.resumen{box-shadow:none;page-break-inside:avoid;}}
+  .resumen tr.sub td{font-weight:700;border-bottom:2px solid var(--paper-line);}
+  .resumen tr.tot td{font-weight:800;font-size:15px;background:var(--teal-pale);color:var(--teal-deep);border-bottom:none;}
 </style>
 </head>
 <body>
@@ -1110,6 +1127,51 @@
       </article>
   </section>
 
+
+  <section class="resumen" id="resumenMedidas">
+    <h2>Resumen de elementos instalados</h2>
+    <p class="sub">Bastidores, paletas, viniles, ACM, encapsulados, tótems y señales de andén instalados en la estación, para restar del presupuesto original.</p>
+    <table><thead><tr><th>Concepto</th><th>Cantidad</th></tr></thead><tbody>
+      <tr class="grp"><td colspan="2">Bastidores</td></tr>
+      <tr><td>Bastidor colgante 2.40 × 0.30 m</td><td class="act">10</td></tr>
+      <tr><td>Bastidor adicional Venta y Recarga 2.40 × 0.30 m</td><td class="act">1</td></tr>
+      <tr><td>Bastidor 1.80 × 0.30 m</td><td class="act">0</td></tr>
+      <tr><td>Bastidor 1.18 × 0.78 m</td><td class="act">2</td></tr>
+      <tr><td>Bastidor 60 × 80 cm</td><td class="act">6</td></tr>
+      <tr><td>Bastidor 40 × 75 cm</td><td class="act">4</td></tr>
+      <tr><td>Bastidor 6.30 × 0.75 m</td><td class="act">0</td></tr>
+      <tr class="sub"><td>Subtotal bastidores</td><td>23</td></tr>
+      <tr class="grp"><td colspan="2">Paletas</td></tr>
+      <tr><td>Paleta 1.18 × 0.78 m</td><td class="act">0</td></tr>
+      <tr><td>Paleta 60 × 80 cm</td><td class="act">0</td></tr>
+      <tr><td>Paleta 40 × 75 cm</td><td class="act">2</td></tr>
+      <tr class="sub"><td>Subtotal paletas</td><td>2</td></tr>
+      <tr class="grp"><td colspan="2">Viniles</td></tr>
+      <tr><td>Vinil 2.40 × 0.30 m</td><td class="act">50</td></tr>
+      <tr><td>Vinil 1.80 × 0.30 m</td><td class="act">0</td></tr>
+      <tr class="sub"><td>Subtotal viniles</td><td>50</td></tr>
+      <tr class="grp"><td colspan="2">ACM</td></tr>
+      <tr><td>ACM 2.40 × 0.30 m (Biciestacionamiento)</td><td class="act">2</td></tr>
+      <tr class="sub"><td>Subtotal ACM</td><td>2</td></tr>
+      <tr class="grp"><td colspan="2">Encapsulados</td></tr>
+      <tr><td>E-000-ALA-S11-000-0-0</td><td class="act">2</td></tr>
+      <tr><td>E-000-ALA-S15-000-a-0</td><td class="act">1</td></tr>
+      <tr><td>F-000-RED-S26-000-0-0</td><td class="act">2</td></tr>
+      <tr><td>G-000-RED-S13-000-0-0</td><td class="act">4</td></tr>
+      <tr><td>K-000-ALA-S15-000-d-0</td><td class="act">1</td></tr>
+      <tr class="sub"><td>Subtotal encapsulados</td><td>10</td></tr>
+      <tr class="grp"><td colspan="2">Tótems</td></tr>
+      <tr><td>Tótem "D"</td><td class="act">2</td></tr>
+      <tr class="sub"><td>Subtotal tótems</td><td>2</td></tr>
+      <tr class="grp"><td colspan="2">Señales de andén</td></tr>
+      <tr><td>Mampara rosa en tótem de andén</td><td class="act">2</td></tr>
+      <tr><td>Señal de peligro (prohibido el paso)</td><td class="act">4</td></tr>
+      <tr><td>Señal de uso de chaleco</td><td class="act">4</td></tr>
+      <tr class="sub"><td>Subtotal señales de andén</td><td>10</td></tr>
+      <tr class="tot"><td>Total de elementos instalados</td><td>99</td></tr>
+    </tbody></table>
+    <p class="nota">Cantidades confirmadas en obra.</p>
+  </section>
   <p class="empty-state" id="emptyState">Sin resultados para este filtro/búsqueda.</p>
 
   <footer>
