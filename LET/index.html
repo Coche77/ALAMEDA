@@ -1081,25 +1081,24 @@
   // This lets photos be delivered as normal files (e.g. via GitHub) instead of
   // depending on browser storage, which has a small size limit.
   const MAX_FOLDER_PHOTOS = 10;
-  function probeFolderPhotos(codigo){
-    const base = codigo.split('__')[0]; // strip the "__N" card-uniqueness suffix, keep just the real código
-    const tries = [];
-    for(let i = 1; i <= MAX_FOLDER_PHOTOS; i++){
-      tries.push(new Promise(resolve => {
-        // Try both layouts: same folder as the HTML (common after a plain drag-and-drop
-        // upload, which often flattens folder structure) and a "fotos/" subfolder.
-        const flatUrl = `${encodeURIComponent(base)}__${i}.jpg`;
-        const nestedUrl = `fotos/${encodeURIComponent(base)}__${i}.jpg`;
-        const tryUrl = (url, fallback) => {
-          const img = new Image();
-          img.onload = () => resolve(url);
-          img.onerror = fallback;
-          img.src = url;
-        };
-        tryUrl(nestedUrl, () => tryUrl(flatUrl, () => resolve(null)));
-      }));
+  // Lista de fotos que ya existen en fotos/ (se genera al armar el reporte).
+  const FOTOS_CARPETA = {"B-000-RED-S05-102-c-0": 1, "A-000-LET-S02-000-0-0": 11, "B-000-RED-S05-000-b-0": 4, "K-000-LET-S15-000-b-0": 4, "E-000-LET-S15-000-c-0": 3, "A-000-RED-S07-000-0-0": 7, "B-000-RED-S05-102-b-0": 1, "A-600-RED-S09-600-0-0": 5, "A-001-RED-S06-001-0-0": 4, "L-000-LET-S02-000-0-X": 2, "G-000-RED-S13-000-0-0": 4, "MAMPARA EN TOTEM DE ANDEN": 5, "A-000-RED-S03-000-0-0": 4, "A-000-RED-S26-000-0-0": 1, "D-000-LET-S10-000-f-X": 3, "A-000-RED-S25-000-0-0": 3, "USO DE CHALECO": 3, "B-503-RED-S05-000-b-0": 2, "B-000-RED-S05-000-c-0": 1, "F-000-RED-S26-000-0-0": 2, "B-503-RED-S05-000-c-0": 1, "PROHIBIDO EL PASO": 3, "A-001-RED-S07-001-0-0": 2, "E-000-LET-S11-000-0-0": 2};
+  const FOTOS_VER = '202610091216';
+  function probeOne(url){
+    return new Promise(resolve => { const img = new Image(); img.onload = () => resolve(true); img.onerror = () => resolve(false); img.src = url; });
+  }
+  async function probeFolderPhotos(codigo){
+    const base = codigo.split('__')[0];
+    const enc = encodeURIComponent(base);
+    const out = [];
+    const n = FOTOS_CARPETA[base] || 0;
+    for(let i = 1; i <= n; i++) out.push(`fotos/${enc}__${i}.jpg?v=${FOTOS_VER}`);
+    // fotos agregadas despues de armar el reporte: se buscan en orden hasta la primera que no exista
+    for(let i = n + 1; i <= MAX_FOLDER_PHOTOS; i++){
+      const url = `fotos/${enc}__${i}.jpg?nc=${Date.now()}`; // sin cache: una foto borrada no vuelve a salir
+      if(await probeOne(url)) out.push(url); else break;
     }
-    return Promise.all(tries).then(results => results.filter(Boolean));
+    return out;
   }
 
   function setPhotos(key, arr){
