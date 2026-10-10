@@ -428,6 +428,23 @@
   .card__sign{background:none !important;padding:0 !important;}
   .card__sign:has(.sign-icon--wide){width:100%;}
   .sign-icon--wide{width:100%;max-height:none;}
+
+  .resumen{margin-top:48px;background:var(--card);border:1px solid var(--paper-line);border-radius:var(--radius);padding:22px 24px;break-inside:avoid;}
+  .resumen h2{font-family:'Space Grotesk',sans-serif;font-size:20px;margin:0 0 4px;}
+  .resumen p.sub{margin:0 0 16px;color:var(--ink-soft);font-size:13px;}
+  .resumen table{width:100%;max-width:520px;border-collapse:collapse;font-size:13.5px;}
+  .resumen th{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);text-align:right;padding:8px 10px;border-bottom:2px solid var(--paper-line);}
+  .resumen th:first-child,.resumen td:first-child{text-align:left;}
+  .resumen td{padding:9px 10px;border-bottom:1px solid var(--paper-line);text-align:right;font-variant-numeric:tabular-nums;}
+  .resumen tr.grp td{background:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-deep);font-weight:600;text-align:left;}
+  .resumen tr.sub td{font-weight:700;border-bottom:2px solid var(--paper-line);}
+  .resumen tr.tot td{font-weight:800;font-size:15px;background:var(--teal-pale);color:var(--teal-deep);border-bottom:none;}
+  .resumen td.inst{color:var(--teal-deep);font-weight:700;}
+  .resumen td.pend{color:var(--red);}
+  .resumen .nota{margin:14px 0 0;font-size:12px;color:var(--ink-soft);line-height:1.5;}
+  @media print{.resumen{box-shadow:none;page-break-inside:avoid;}}
+  .resumen tr.sub td{font-weight:700;border-bottom:2px solid var(--paper-line);}
+  .resumen tr.tot td{font-weight:800;font-size:15px;background:var(--teal-pale);color:var(--teal-deep);border-bottom:none;}
 </style>
 </head>
 <body>
@@ -519,12 +536,12 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">32</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">36</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="24" min="0" data-actualizado="36" data-key="A-000-FUG-S02-000-0-0__FUG0"><span class="stat__label">Instaladas</span></div>
-            <div class="stat"><span class="stat__num" data-role="pendientes">12</span><span class="stat__label">Pendientes</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="36" min="0" data-actualizado="36" data-key="A-000-FUG-S02-000-0-0__FUG0"><span class="stat__label">Instaladas</span></div>
+            <div class="stat"><span class="stat__num" data-role="pendientes">0</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
         <div class="card__photo is-empty" data-photo-key="A-000-FUG-S02-000-0-0__FUG0"></div>
-        <p class="obs">Instalado en: Andén Línea 3 (16), Andén Oriente (8). </p>
+        <p class="obs">Instalado completo (36) — confirmado en obra.</p>
       </article>
       <article class="card" data-status="pendiente" data-search="a-000-fu3-s02-000-0-x félix u. gómez (fondo negro) señ.1.01 vestíbulo (2)">
         <div class="card__top">
@@ -671,12 +688,12 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">1</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">5</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="1" min="0" data-actualizado="5" data-key="B-000-RED-S05-000-a-0__FUG8"><span class="stat__label">Instaladas</span></div>
-            <div class="stat"><span class="stat__num" data-role="pendientes">4</span><span class="stat__label">Pendientes</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="5" min="0" data-actualizado="5" data-key="B-000-RED-S05-000-a-0__FUG8"><span class="stat__label">Instaladas</span></div>
+            <div class="stat"><span class="stat__num" data-role="pendientes">0</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
         <div class="card__photo is-empty" data-photo-key="B-000-RED-S05-000-a-0__FUG8"></div>
-        <p class="obs">Instalado en: Andén L3 (1). </p>
+        <p class="obs">Instalado completo (5) — confirmado en obra.</p>
       </article>
       <article class="card" data-status="pendiente" data-search="b-000-red-s05-000-b-0 dirección exposición señ.1.02 andén l1 (1)">
         <div class="card__top">
@@ -690,12 +707,12 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">1</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">5</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="1" min="0" data-actualizado="5" data-key="B-000-RED-S05-000-b-0__FUG9"><span class="stat__label">Instaladas</span></div>
-            <div class="stat"><span class="stat__num" data-role="pendientes">4</span><span class="stat__label">Pendientes</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="5" min="0" data-actualizado="5" data-key="B-000-RED-S05-000-b-0__FUG9"><span class="stat__label">Instaladas</span></div>
+            <div class="stat"><span class="stat__num" data-role="pendientes">0</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
         <div class="card__photo is-empty" data-photo-key="B-000-RED-S05-000-b-0__FUG9"></div>
-        <p class="obs">Instalado en: Andén L1 (1). </p>
+        <p class="obs">Instalado completo (5) — confirmado en obra.</p>
       </article>
       <article class="card" data-status="pendiente" data-search="b-000-red-s05-000-c-0 dirección talleres señ.1.02 andén l1 (1)">
         <div class="card__top">
@@ -709,12 +726,12 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">1</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">5</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="1" min="0" data-actualizado="5" data-key="B-000-RED-S05-000-c-0__FUG10"><span class="stat__label">Instaladas</span></div>
-            <div class="stat"><span class="stat__num" data-role="pendientes">4</span><span class="stat__label">Pendientes</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="5" min="0" data-actualizado="5" data-key="B-000-RED-S05-000-c-0__FUG10"><span class="stat__label">Instaladas</span></div>
+            <div class="stat"><span class="stat__num" data-role="pendientes">0</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
         <div class="card__photo is-empty" data-photo-key="B-000-RED-S05-000-c-0__FUG10"></div>
-        <p class="obs">Instalado en: Andén L1 (1). </p>
+        <p class="obs">Instalado completo (5) — confirmado en obra.</p>
       </article>
       <article class="card" data-status="pendiente" data-search="b-000-red-s05-000-d-0 dirección hospital metropolitano señ.1.02 andén l3 (1)">
         <div class="card__top">
@@ -728,12 +745,12 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">1</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">5</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="1" min="0" data-actualizado="5" data-key="B-000-RED-S05-000-d-0__FUG11"><span class="stat__label">Instaladas</span></div>
-            <div class="stat"><span class="stat__num" data-role="pendientes">4</span><span class="stat__label">Pendientes</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="5" min="0" data-actualizado="5" data-key="B-000-RED-S05-000-d-0__FUG11"><span class="stat__label">Instaladas</span></div>
+            <div class="stat"><span class="stat__num" data-role="pendientes">0</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
         <div class="card__photo is-empty" data-photo-key="B-000-RED-S05-000-d-0__FUG11"></div>
-        <p class="obs">Instalado en: Andén L3 (1). </p>
+        <p class="obs">Instalado completo (5) — confirmado en obra.</p>
       </article>
       <article class="card" data-status="pendiente" data-search="b-000-red-s05-002-b-0 dirección exposición (flecha der) señ.1.02 pasarela café de papa (1)">
         <div class="card__top">
@@ -1165,12 +1182,12 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">0</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">5</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="0" min="0" data-actualizado="5" data-key="A-303-RED-S03-000-0-0__FUG34"><span class="stat__label">Instaladas</span></div>
-            <div class="stat"><span class="stat__num" data-role="pendientes">5</span><span class="stat__label">Pendientes</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="5" min="0" data-actualizado="5" data-key="A-303-RED-S03-000-0-0__FUG34"><span class="stat__label">Instaladas</span></div>
+            <div class="stat"><span class="stat__num" data-role="pendientes">0</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
         <div class="card__photo is-empty" data-photo-key="A-303-RED-S03-000-0-0__FUG34"></div>
-        <p class="obs">Nota tabla: No instalado.</p>
+        <p class="obs">Instalado completo (5) — confirmado en obra.</p>
       </article>
       <article class="card" data-status="pendiente" data-search="a-000-red-s03-302-0-0 elevador / elevator (flecha der) señ.1.12 ">
         <div class="card__top">
@@ -1184,12 +1201,12 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">0</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">5</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="0" min="0" data-actualizado="5" data-key="A-000-RED-S03-302-0-0__FUG35"><span class="stat__label">Instaladas</span></div>
-            <div class="stat"><span class="stat__num" data-role="pendientes">5</span><span class="stat__label">Pendientes</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="5" min="0" data-actualizado="5" data-key="A-000-RED-S03-302-0-0__FUG35"><span class="stat__label">Instaladas</span></div>
+            <div class="stat"><span class="stat__num" data-role="pendientes">0</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
         <div class="card__photo is-empty" data-photo-key="A-000-RED-S03-302-0-0__FUG35"></div>
-        <p class="obs">Nota tabla: No instalado.</p>
+        <p class="obs">Instalado completo (5) — confirmado en obra.</p>
       </article>
       <article class="card" data-status="pendiente" data-search="a-001-red-s07-001-0-0 salida / exit (flechas arriba) señ.1.01 vestíbulo (2)">
         <div class="card__top">
@@ -1203,12 +1220,12 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">2</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">3</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="2" min="0" data-actualizado="3" data-key="A-001-RED-S07-001-0-0__FUG36"><span class="stat__label">Instaladas</span></div>
-            <div class="stat"><span class="stat__num" data-role="pendientes">1</span><span class="stat__label">Pendientes</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="3" min="0" data-actualizado="3" data-key="A-001-RED-S07-001-0-0__FUG36"><span class="stat__label">Instaladas</span></div>
+            <div class="stat"><span class="stat__num" data-role="pendientes">0</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
         <div class="card__photo is-empty" data-photo-key="A-001-RED-S07-001-0-0__FUG36"></div>
-        <p class="obs">Instalado en: Vestíbulo (2). </p>
+        <p class="obs">Instalado completo (3) — confirmado en obra.</p>
       </article>
       <article class="card" data-status="pendiente" data-search="a-010-red-s08-010-0-0 salida ① / exit ① señ.1.01 vestíbulo (1)">
         <div class="card__top">
@@ -1495,7 +1512,7 @@
         <div class="card__photo is-empty" data-photo-key="MAMPARA EN TOTEM DE ANDEN__FUG53"></div>
         <p class="obs">Instalado en: Andén L1 (2), Andén L3 (2). </p>
       </article>
-      <article class="card" data-status="pendiente" data-search="prohibido el paso prohibido el paso señ.1.10 andén l1 (3), andén l3 (4)">
+      <article class="card" data-status="pendiente" data-search="prohibido el paso prohibido el paso señ.1.10 andén l1 (4), andén l3 (4)">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.10</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -1507,14 +1524,14 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">8</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">8</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="7" min="0" data-actualizado="8" data-key="PROHIBIDO EL PASO__FUG54"><span class="stat__label">Instaladas</span></div>
-            <div class="stat"><span class="stat__num" data-role="pendientes">1</span><span class="stat__label">Pendientes</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="8" min="0" data-actualizado="8" data-key="PROHIBIDO EL PASO__FUG54"><span class="stat__label">Instaladas</span></div>
+            <div class="stat"><span class="stat__num" data-role="pendientes">0</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
         <div class="card__photo is-empty" data-photo-key="PROHIBIDO EL PASO__FUG54"></div>
-        <p class="obs">Instalado en: Andén L1 (3), Andén L3 (4). </p>
+        <p class="obs">Instalado en: Andén L1 (4), Andén L3 (4). </p>
       </article>
-      <article class="card" data-status="pendiente" data-search="uso de chaleco uso de chaleco señ.1.11 andén l1 (2), andén l3 (4)">
+      <article class="card" data-status="pendiente" data-search="uso de chaleco uso de chaleco señ.1.11 andén l1 (4), andén l3 (4)">
         <div class="card__top">
           <span class="eyebrow">SEÑ.1.11</span>
           <span class="pill pill--pendiente">Pendiente</span>
@@ -1526,12 +1543,12 @@
           <div class="stats">
             <div class="stat"><span class="stat__num">8</span><span class="stat__label">Contrato</span></div>
             <div class="stat"><span class="stat__num">8</span><span class="stat__label">Actualizado</span></div>
-            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="6" min="0" data-actualizado="8" data-key="USO DE CHALECO__FUG55"><span class="stat__label">Instaladas</span></div>
-            <div class="stat"><span class="stat__num" data-role="pendientes">2</span><span class="stat__label">Pendientes</span></div>
+            <div class="stat stat--inst"><input type="number" class="stat__num stat__num--edit" value="8" min="0" data-actualizado="8" data-key="USO DE CHALECO__FUG55"><span class="stat__label">Instaladas</span></div>
+            <div class="stat"><span class="stat__num" data-role="pendientes">0</span><span class="stat__label">Pendientes</span></div>
           </div>
         </div>
         <div class="card__photo is-empty" data-photo-key="USO DE CHALECO__FUG55"></div>
-        <p class="obs">Instalado en: Andén L1 (2), Andén L3 (4). </p>
+        <p class="obs">Instalado en: Andén L1 (4), Andén L3 (4). </p>
       </article>
   </section>
 
@@ -1844,6 +1861,60 @@
       </article>
   </section>
 
+
+  <section class="resumen" id="resumenMedidas">
+    <h2>Resumen de elementos instalados</h2>
+    <p class="sub">Bastidores, paletas, viniles, ACM, encapsulados, tótems y señales de andén instalados en la estación, para restar del presupuesto original.</p>
+    <table><thead><tr><th>Concepto</th><th>Cantidad</th></tr></thead><tbody>
+      <tr class="grp"><td colspan="2">Bastidores</td></tr>
+      <tr><td>Bastidor 2.40 × 0.30 m</td><td class="act">0</td></tr>
+      <tr><td>Bastidor colgante 2.40 × 0.30 m</td><td class="act">0</td></tr>
+      <tr><td>Bastidor 1.30 × 0.30 m</td><td class="act">4</td></tr>
+      <tr><td>Bastidor 1.18 × 0.78 m (mapa de red)</td><td class="act">2</td></tr>
+      <tr><td>Bastidor 60 × 80 cm (reglamentos)</td><td class="act">3</td></tr>
+      <tr><td>Bastidor 40 × 75 cm</td><td class="act">8</td></tr>
+      <tr><td>Bastidor 6.30 × 0.75 m</td><td class="act">0</td></tr>
+      <tr class="sub"><td>Subtotal bastidores</td><td>17</td></tr>
+      <tr class="grp"><td colspan="2">Paletas</td></tr>
+      <tr><td>Paleta 1.18 × 0.78 m</td><td class="act">0</td></tr>
+      <tr><td>Paleta 60 × 80 cm</td><td class="act">0</td></tr>
+      <tr><td>Paleta 40 × 75 cm</td><td class="act">0</td></tr>
+      <tr class="sub"><td>Subtotal paletas</td><td>0</td></tr>
+      <tr class="grp"><td colspan="2">Viniles</td></tr>
+      <tr><td>Vinil 2.40 × 0.30 m (tabla de control: 137 − 2 = 135)</td><td class="act">135</td></tr>
+      <tr><td>Vinil 1.30 × 0.30 m — Dirección Sendero (extra minuta)</td><td class="act">2</td></tr>
+      <tr><td>Vinil 1.30 × 0.30 m — Dirección Hospital Metropolitano (extra minuta)</td><td class="act">2</td></tr>
+      <tr><td>Vinil 1.30 × 0.30 m — Oficina Sindical (extra minuta)</td><td class="act">1</td></tr>
+      <tr><td>Vinil 1.30 × 0.30 m — Primeros Auxilios (extra minuta)</td><td class="act">1</td></tr>
+      <tr class="sub"><td>Subtotal viniles</td><td>141</td></tr>
+      <tr class="grp"><td colspan="2">ACM</td></tr>
+      <tr><td>ACM 2.40 × 0.30 m</td><td class="act">0</td></tr>
+      <tr><td>ACM 1.30 × 0.30 m</td><td class="act">4</td></tr>
+      <tr class="sub"><td>Subtotal ACM</td><td>4</td></tr>
+      <tr class="grp"><td colspan="2">Encapsulados</td></tr>
+      <tr><td>E-000-FUG-S11-000-0-0</td><td class="act">2</td></tr>
+      <tr><td>E-000-FUG-S15-000-b-0</td><td class="act">1</td></tr>
+      <tr><td>E-000-FUG-S15-000-c-0</td><td class="act">1</td></tr>
+      <tr><td>E-000-FUG-S15-000-d-0</td><td class="act">2</td></tr>
+      <tr><td>K-000-FUG-S15-000-a-0</td><td class="act">2</td></tr>
+      <tr><td>F-000-RED-S16-000-0-0</td><td class="act">1</td></tr>
+      <tr><td>F-000-RED-S26-000-0-0</td><td class="act">1</td></tr>
+      <tr><td>G-000-RED-S13-000-0-0</td><td class="act">2</td></tr>
+      <tr class="sub"><td>Subtotal encapsulados</td><td>12</td></tr>
+      <tr class="grp"><td colspan="2">Tótems</td></tr>
+      <tr><td>Tótem "D"</td><td class="act">2</td></tr>
+      <tr class="sub"><td>Subtotal tótems</td><td>2</td></tr>
+      <tr class="grp"><td colspan="2">Señales de andén</td></tr>
+      <tr><td>Mampara rosa en tótem de andén</td><td class="act">4</td></tr>
+      <tr><td>Señal de peligro (prohibido el paso) — Andén L1</td><td class="act">4</td></tr>
+      <tr><td>Señal de peligro (prohibido el paso) — Andén L3</td><td class="act">4</td></tr>
+      <tr><td>Señal de uso de chaleco — Andén L1</td><td class="act">4</td></tr>
+      <tr><td>Señal de uso de chaleco — Andén L3</td><td class="act">4</td></tr>
+      <tr class="sub"><td>Subtotal señales de andén</td><td>20</td></tr>
+      <tr class="tot"><td>Total de elementos instalados</td><td>196</td></tr>
+    </tbody></table>
+    <p class="nota">Cantidades confirmadas en obra.</p>
+  </section>
   <p class="empty-state" id="emptyState">Sin resultados para este filtro/búsqueda.</p>
 
   <footer>
