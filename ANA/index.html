@@ -1324,17 +1324,19 @@
 
   function updateCardFromInput(input, save){
     const card = input.closest('.card');
-    let actualizado = parseInt(input.dataset.actualizado, 10) || 0;
+    if(input.dataset.actOrig === undefined) input.dataset.actOrig = input.dataset.actualizado || '0';
+    const actOrig = parseInt(input.dataset.actOrig, 10) || 0;
     let val = parseInt(input.value, 10);
     if(isNaN(val) || val < 0) val = 0;
-    if(val > actualizado){
-      // more pieces installed than planned: raise "Actualizado" to match
-      actualizado = val;
-      input.dataset.actualizado = String(val);
-      const actEl = card.querySelectorAll('.stat')[1]?.querySelector('.stat__num');
-      if(actEl) actEl.textContent = val;
-      if(save){ try{ localStorage.setItem('senal_actualizado__' + input.dataset.key, String(val)); }catch(err){} }
-    }
+    // Actualizado nunca baja del valor de la tabla; solo sube si se instalan mas piezas.
+    let actualizado = Math.max(actOrig, val);
+    input.dataset.actualizado = String(actualizado);
+    const actEl = card.querySelectorAll('.stat')[1]?.querySelector('.stat__num');
+    if(actEl) actEl.textContent = actualizado;
+    if(save){ try{
+      if(actualizado > actOrig) localStorage.setItem('senal_actualizado__' + input.dataset.key, String(actualizado));
+      else localStorage.removeItem('senal_actualizado__' + input.dataset.key);
+    }catch(err){} }
     input.value = val;
 
     const pendEl = card.querySelector('[data-role="pendientes"]');
@@ -1402,7 +1404,8 @@
     if(stored !== null){ input.value = stored; }
     let storedAct = null;
     try{ storedAct = localStorage.getItem('senal_actualizado__' + key); }catch(err){}
-    if(storedAct !== null && parseInt(storedAct,10) > (parseInt(input.dataset.actualizado,10)||0)){
+    input.dataset.actOrig = input.dataset.actualizado || '0';
+    if(storedAct !== null && parseInt(storedAct,10) > (parseInt(input.dataset.actualizado,10)||0) && parseInt(storedAct,10) <= (parseInt(input.value,10)||0)){
       input.dataset.actualizado = storedAct;
       const actEl = input.closest('.card').querySelectorAll('.stat')[1]?.querySelector('.stat__num');
       if(actEl) actEl.textContent = storedAct;
