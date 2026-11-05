@@ -1,0 +1,40 @@
+Coloca aqui las fotos con estos nombres. Agrega __1, __2, __3... antes de .jpg
+
+01  Mitras                  MIT_P-002-RED-S04-002-0-C__1.jpg
+02  Mitras                  MIT_P-003-RED-S04-003-0-C__1.jpg
+03  San Bernabé             SBE_C-000-SBE-502-000-0-0__1.jpg
+04  San Bernabé             SBE_A-000-SBE-S02-000-0-X__1.jpg
+05  San Bernabé             SBE_M-000-SBE-S07-000-0-0__1.jpg
+06  San Bernabé             SBE_M-003-SBE-S05-003-0-0__1.jpg
+07  San Bernabé             SBE_M-002-SBE-S05-002-0-0-1__1.jpg
+08  San Bernabé             SBE_M-000-SBE-S07-000-0-0-1__1.jpg
+09  San Bernabé             SBE_L-000-SBE-S02-000-0-X__1.jpg
+10  San Bernabé             SBE_M-002-SBE-S05-002-0-0__1.jpg
+11  San Bernabé             SBE_A-000-RED-S26-000-0-0__1.jpg
+12  San Bernabé             SBE_A-000-SBE-S02-000-0-0__1.jpg
+13  San Bernabé             SBE_A-000-RED-S07-000-0-0__1.jpg
+14  Sendero                 SEN_A-000-SEN-S02-000-0-0__1.jpg
+15  Sendero                 SEN_A-000-RED-S26-000-0-0__1.jpg
+16  Sendero                 SEN_F-000-RED-S26-000-0-0__1.jpg
+17  Sendero                 SEN_PROHIBIDO-EL-PASO__1.jpg
+18  Sendero                 SEN_USO-DE-CHALECO__1.jpg
+19  Universidad             UNI_A-000-RED-S05-000-a-0__1.jpg
+20  Universidad             UNI_B-000-RED-S05-102-a-0__1.jpg
+21  Universidad             UNI_B-000-RED-S05-202-a-0__1.jpg
+22  Universidad             UNI_B-503-RED-S05-000-a-0__1.jpg
+23  Universidad             UNI_B-103-RED-S05-000-d-0__1.jpg
+24  Universidad             UNI_B-000-RED-S05-000-a-0__1.jpg
+25  Universidad             UNI_A-000-RED-S07-000-0-0__1.jpg
+26  Universidad             UNI_A-000-RED-S07-502-0-0__1.jpg
+27  Universidad             UNI_A-001-RED-S07-001-0-0__1.jpg
+28  Fundadores              FUN_A-000-RED-S07-102-0-0__1.jpg
+29  Hospital Metropolitano  HOM_A-303-RED-S06-201-0-0__1.jpg
+30  Hospital Metropolitano  HOM_A-301-RED-S06-202-0-0__1.jpg
+31  Hospital Metropolitano  HOM_A-003-RED-S07-302-0-0__1.jpg
+32  Hospital Metropolitano  HOM_A-000-RED-S26-000-0-0__1.jpg
+33  Hospital Metropolitano  HOM_F-000-RED-S26-000-0-0__1.jpg
+34  Hospital Metropolitano  HOM_A-300-RED-S03-300-0-0__1.jpg
+35  Hospital Metropolitano  HOM_E-000-HOM-S15-000-a-0-MURO__1.jpg
+36  Hospital Metropolitano  HOM_E-000-HOM-S15-000-a-0-PALETA__1.jpg
+37  Hospital Metropolitano  HOM_A-000-HOM-S02-000-0-0__1.jpg
+38  Hospital Metropolitano  HOM_B-000-RED-S05-002-a-0__1.jpg
