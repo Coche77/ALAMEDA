@@ -1380,13 +1380,15 @@
   }
   async function probeFolderPhotos(key){
     const found = [];
+    let misses = 0;
     for(let i = 1; i <= MAX_FOLDER_PHOTOS; i++){
       let hit = null;
       for(const ext of PHOTO_EXTS){
         const url = `fotos/${encodeURIComponent(key)}__${i}.${ext}?v=${PHOTO_BUST}`;
         if(await imageExists(url)){ hit = url; break; }
       }
-      if(!hit) break;
+      if(!hit){ if(++misses >= 5) break; continue; }
+      misses = 0;
       found.push(hit);
     }
     return found;
