@@ -1546,16 +1546,21 @@
   function imageExists(url){
     return new Promise(res => { const im = new Image(); im.onload = () => res(true); im.onerror = () => res(false); im.src = url; });
   }
+  async function probeOne(key, i){
+    const tries = PHOTO_EXTS.map(ext => {
+      const url = `fotos/${encodeURIComponent(key)}__${i}.${ext}?v=${PHOTO_BUST}`;
+      return imageExists(url).then(ok => ok ? url : null);
+    });
+    const res = await Promise.all(tries);
+    return res.find(Boolean) || null;
+  }
   async function probeFolderPhotos(key){
+    // números en orden; extensiones en paralelo; tolera huecos de hasta 3 números
     const found = [];
     let misses = 0;
     for(let i = 1; i <= MAX_FOLDER_PHOTOS; i++){
-      let hit = null;
-      for(const ext of PHOTO_EXTS){
-        const url = `fotos/${encodeURIComponent(key)}__${i}.${ext}?v=${PHOTO_BUST}`;
-        if(await imageExists(url)){ hit = url; break; }
-      }
-      if(!hit){ if(++misses >= 5) break; continue; }
+      const hit = await probeOne(key, i);
+      if(!hit){ if(++misses >= 4) break; continue; }
       misses = 0;
       found.push(hit);
     }
